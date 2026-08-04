@@ -1,0 +1,29 @@
+class Solution:
+    def minWindow(self, s: str, t: str) -> str:
+        n=len(s)
+        requiredCount=len(t)
+        i=0
+        j=0
+        minStart=0
+        minWindow=float('inf')
+        mp={}
+        for ch in t:
+            mp[ch]=mp.get(ch,0)+1
+        while j<n:
+            ch_j=s[j]
+            if mp.get(ch_j,0)>0:
+                requiredCount-=1
+            mp[ch_j]=mp.get(ch_j,0)-1
+            while requiredCount ==0:
+                if minWindow > (j-i+1):
+                    minWindow=j-i+1
+                    minStart=i
+                ch_i=s[i]
+                mp[ch_i]=mp.get(ch_i,0)+1
+                if mp[ch_i]>0:
+                    requiredCount+=1
+                i+=1
+            j+=1
+        if minWindow==float('inf'):
+            return ""
+        return s[minStart:minStart+minWindow]
