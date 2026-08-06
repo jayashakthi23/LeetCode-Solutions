@@ -1,0 +1,10 @@
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        r=[]
+        def insert(node):
+            if node:
+                left=insert(node.left)
+                r.append(node.val)
+                right=insert(node.right)
+        insert(root)
+        return r
