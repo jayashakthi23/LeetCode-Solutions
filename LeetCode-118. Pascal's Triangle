@@ -1,0 +1,10 @@
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:
+        r=[[1]]
+        for i in range(numRows-1):
+            temp=[0]+r[-1]+[0]
+            tem=[]
+            for i in range(len(temp)-1):
+                tem.append(temp[i]+temp[i+1])
+            r.append(tem)
+        return r
