@@ -1,0 +1,24 @@
+class Solution(object):
+    def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        r=str(x)
+        
+        if x>0:
+             r=r[::-1]
+             r=int(r)
+           
+        else:
+           s=""
+           for i in str(x):
+            if i !="-":
+                s+=i
+           r="-"+s[::-1]
+           r=int(r)
+        if -2147483648 <= r <= 2147483647:
+            return r
+        else:
+            return 0
+           
