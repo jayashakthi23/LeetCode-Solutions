@@ -1,0 +1,19 @@
+class Solution(object):
+    def thirdMax(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        r=[]
+        for i in nums:
+            if i not in r:
+                r.append(i)
+        r.sort()
+        if len(r)>=3:
+            return r[-3]
+        # elif len(nums)==2:
+        #     return nums[-2]
+        # elif len(nums)==1:
+        #     return nums[-1]
+        else:
+            return r[-1]
