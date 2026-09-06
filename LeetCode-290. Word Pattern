@@ -1,0 +1,21 @@
+class Solution(object):
+    def wordPattern(self, pattern, s):
+        """
+        :type pattern: str
+        :type s: str
+        :rtype: bool
+        """
+        w=s.split()
+        if len(pattern)!=len(w):
+            return False
+        for i in range(len(pattern)):
+            if pattern.count(pattern[i])!=w.count(w[i]):
+                return False
+        d={}
+        for i in range(len(pattern)):
+            if w[i] in d:
+                if d[w[i]]!=pattern[i]:
+                    return False
+            
+            d[w[i]]=pattern[i]
+        return True
