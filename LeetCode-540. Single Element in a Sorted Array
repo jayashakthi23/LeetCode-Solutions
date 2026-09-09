@@ -1,0 +1,10 @@
+from collections import Counter
+class Solution(object):
+    def singleNonDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        
+        d=Counter(nums)
+        return min(d,key=d.get)
