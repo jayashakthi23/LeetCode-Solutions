@@ -1,0 +1,14 @@
+from collections import Counter
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        freq=Counter(nums)
+        r=[]
+        a=len(nums)//3
+        for k,v in freq.items():
+            if v>a:
+                r.append(k)
+        return r
