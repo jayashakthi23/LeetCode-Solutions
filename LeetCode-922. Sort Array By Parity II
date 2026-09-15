@@ -1,0 +1,17 @@
+class Solution(object):
+    def sortArrayByParityII(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        r=[0]*len(nums)
+        even=0
+        odd=1
+        for i in nums:
+            if i%2==0:
+                r[even]=i
+                even+=2
+            else:
+                r[odd]=i
+                odd+=2
+        return r
