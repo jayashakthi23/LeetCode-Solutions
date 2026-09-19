@@ -1,0 +1,13 @@
+class Solution(object):
+    def countElements(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        a=max(nums)
+        b=min(nums)
+        c=0
+        for i in nums:
+            if i>b and i<a:
+                c+=1
+        return c
