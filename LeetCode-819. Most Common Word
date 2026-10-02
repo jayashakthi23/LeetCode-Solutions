@@ -1,0 +1,17 @@
+from collections import Counter
+class Solution(object):
+    def mostCommonWord(self, paragraph, banned):
+        """
+        :type paragraph: str
+        :type banned: List[str]
+        :rtype: str
+        """
+        paragraph=paragraph.lower()
+        for i in "?!,.;'":
+            paragraph=paragraph.replace(i," ")
+        words=paragraph.split()
+        freq=Counter(words)
+        for i in words:
+            if i in banned:
+                del freq[i]
+        return max(freq,key=freq.get)
