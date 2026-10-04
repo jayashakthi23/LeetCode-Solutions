@@ -1,0 +1,19 @@
+class Solution(object):
+    def findRelativeRanks(self, score):
+        """
+        :type score: List[int]
+        :rtype: List[str]
+        """
+        sorted_score=sorted(score,reverse=True)
+        r=[]
+        for i in score:
+            rank=sorted_score.index(i)
+            if rank==0:
+                r.append("Gold Medal")
+            elif rank==1:
+                r.append("Silver Medal")
+            elif rank==2:
+                r.append("Bronze Medal")
+            else:
+                r.append(str(rank+1))
+        return r
