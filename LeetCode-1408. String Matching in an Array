@@ -1,0 +1,13 @@
+class Solution(object):
+    def stringMatching(self, words):
+        """
+        :type words: List[str]
+        :rtype: List[str]
+        """
+        r=[]
+        s=sorted(words,key=len)
+        for i in s:
+            for j in words:
+                if (i in j and i!=j) and i not in r:
+                    r.append(i)
+        return r
