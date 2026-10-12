@@ -1,0 +1,13 @@
+class Solution(object):
+    def pivotIndex(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        for mid in range(len(nums)):
+            left=sum(nums[:mid])
+            right=sum(nums[mid+1:])
+            if left==right:
+                return mid
+        else:
+            return -1
