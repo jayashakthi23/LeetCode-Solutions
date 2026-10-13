@@ -11,8 +11,7 @@ class Solution(object):
         for i in arr2:
             if i in arr1:
                 c=arr1.count(i) 
-                for k in range(c):
-                    r1.append(i)
+                r1.extend([i]*c)
         for i in arr1:
             if i not in r1:
                 r2.append(i)
