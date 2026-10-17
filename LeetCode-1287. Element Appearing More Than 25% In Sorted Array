@@ -1,0 +1,9 @@
+from collections import Counter
+class Solution(object):
+    def findSpecialInteger(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: int
+        """
+        f=Counter(arr)
+        return max(f,key=f.get)
