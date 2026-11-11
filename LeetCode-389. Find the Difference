@@ -1,0 +1,11 @@
+from collections import Counter
+class Solution(object):
+    def findTheDifference(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: str
+        """
+        r=Counter(t)-Counter(s)
+        for k,v in r.items():
+            return k
