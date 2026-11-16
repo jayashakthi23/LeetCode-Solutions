@@ -1,0 +1,14 @@
+class Solution(object):
+    def largestOddNumber(self, num):
+        """
+        :type num: str
+        :rtype: str
+        """
+       
+        n=int(num)
+        while(n>0):
+            if n%2!=0:
+                return str(n)
+                break
+            n=n//10
+        return ""
